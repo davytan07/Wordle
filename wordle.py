@@ -5,7 +5,10 @@ theWord = ''
 gameRunning = True
 
 def clear():
-    os.system('clear')
+    if os.name == 'nt':
+        os.system('cls')
+    elif os.name == 'posix':
+        os.system('clear')
 
 def printLogo():
     prGreen('W O R D L E')
